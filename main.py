@@ -77,13 +77,13 @@ def index():
 
 
         # Render template with results
-        return render_template("result.html", kebutuhan_kalori=kebutuhan_kalori,
+        return render_template("result.j2", kebutuhan_kalori=kebutuhan_kalori,
                                selected_foods_pagi=selected_foods_pagi, total_calories_pagi=total_calories_pagi,
                                selected_foods_siang=selected_foods_siang, total_calories_siang=total_calories_siang, 
                                nama=nama)
     else:
         # Render form template
-        return render_template("index.html")
+        return render_template("index.j2")
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
