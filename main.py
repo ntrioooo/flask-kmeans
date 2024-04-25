@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 from sklearn.cluster import KMeans
 import random
+import os
 
 app = Flask(__name__)
 
@@ -84,4 +85,5 @@ def index():
         # Render form template
         return render_template("index.html")
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
